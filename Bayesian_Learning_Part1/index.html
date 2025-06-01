@@ -391,8 +391,8 @@
   <h1>Bayesian Learning: Part I</h1>
 
 <p>In this post I want to lay out some of the basic concepts of Bayesian inference as used in the machine learning context. The content on this post is heavily derived from [1, 2]. This post and my interes in Bayesian inference has been inspired by talks I attend with the <a href="https://www.meetup.com/Boston-Bayesians">Boston Bayesian Meetup</a> group.</p>
-<p>In supervised machine learning, we wish to learn relation between two variables $A$ and $B$ given some sample examples. Once the relation has been 'learned', the we can predict 'what is $B$' given $A$. In practice the measurement of both the dependent ($B$) and independent ($A$) variable is inexact and the relation between them is not deterministic. Given this inherent uncertainty it does not make sense to have a deterministic for $B$ with complete certainty. A probabilistic approach is better suited for meaningful reasoning in presence of uncertainty.</p>
-<p>The probabilistic approach treats both $A$ and $B$ as random variables and relates the two via the conditional probability $P(B|A)$ i.e., the probability of $B$ given a specific value of $A$. The first step in machine learning is to approximate the likelihood $P(B|A)$ with an appropriate model based on a given set of examples of $A$ and $B$. Typically, the conditional probability $P(B|A)$ has a parameterized model 
+<p>In supervised machine learning, we wish to learn relation between two variables <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> given some sample examples. Once the relation has been 'learned', the we can predict 'what is <span class="arithmatex">\(B\)</span>' given <span class="arithmatex">\(A\)</span>. In practice the measurement of both the dependent (<span class="arithmatex">\(B\)</span>) and independent (<span class="arithmatex">\(A\)</span>) variable is inexact and the relation between them is not deterministic. Given this inherent uncertainty it does not make sense to have a deterministic for <span class="arithmatex">\(B\)</span> with complete certainty. A probabilistic approach is better suited for meaningful reasoning in presence of uncertainty.</p>
+<p>The probabilistic approach treats both <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> as random variables and relates the two via the conditional probability <span class="arithmatex">\(P(B|A)\)</span> i.e., the probability of <span class="arithmatex">\(B\)</span> given a specific value of <span class="arithmatex">\(A\)</span>. The first step in machine learning is to approximate the likelihood <span class="arithmatex">\(P(B|A)\)</span> with an appropriate model based on a given set of examples of <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. Typically, the conditional probability <span class="arithmatex">\(P(B|A)\)</span> has a parameterized model 
 $$
 \newcommand{\weight}{\mathbf{w}}
 \newcommand{\dataset}{\mathcal{D}}
@@ -406,15 +406,15 @@ $$
 \newcommand{\inv}{{-1}}
 P(B|A) = f(A;\weight),
 $$
-where $\weight$ is a vector of model parameters. Then given a set $\dataset$ of $N$ examples $\dataset = {A_n, B_n}<em>{n=1:N}$, a conventional approach involves optimization (e.g. maximum likelihood, least-squares fit) of our model for the given data $\dataset$ w.r.t. the parameters $\weight$. With the optimal parameters $\weight</em>{opt}$ computed, we can predict the unknown $B$ by evaluating $f(A_<em>; \weight_{opt})$ given $A_</em>$. </p>
-<p>The Bayesian inference approach treats the model parameters $\weight$ as random variables. The conditional probability of $B$ now depends on both $A$ and $\weight$: $P(B|A, \weight)$. Rather than 'learning' specific values for $\weight$, we can infer a <em>posterior</em> distribution $P(\weight|A, B)$ over the parameters $\weight$ using the Bayes' rule. </p>
+where <span class="arithmatex">\(\weight\)</span> is a vector of model parameters. Then given a set <span class="arithmatex">\(\dataset\)</span> of <span class="arithmatex">\(N\)</span> examples <span class="arithmatex">\(\dataset = \{A_n, B_n\}_{n=1:N}\)</span>, a conventional approach involves optimization (e.g. maximum likelihood, least-squares fit) of our model for the given data <span class="arithmatex">\(\dataset\)</span> w.r.t. the parameters <span class="arithmatex">\(\weight\)</span>. With the optimal parameters <span class="arithmatex">\(\weight_{opt}\)</span> computed, we can predict the unknown <span class="arithmatex">\(B\)</span> by evaluating <span class="arithmatex">\(f(A_*; \weight_{opt})\)</span> given <span class="arithmatex">\(A_*\)</span>. </p>
+<p>The Bayesian inference approach treats the model parameters <span class="arithmatex">\(\weight\)</span> as random variables. The conditional probability of <span class="arithmatex">\(B\)</span> now depends on both <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(\weight\)</span>: <span class="arithmatex">\(P(B|A, \weight)\)</span>. Rather than 'learning' specific values for <span class="arithmatex">\(\weight\)</span>, we can infer a <em>posterior</em> distribution <span class="arithmatex">\(P(\weight|A, B)\)</span> over the parameters <span class="arithmatex">\(\weight\)</span> using the Bayes' rule. </p>
 <p>In general, the Bayesian approach for learning model parameters involves following steps:
-* Given $n$ data, $\dataset$, write down the likelihood expression $P(B|, \weight)$.
-* Specify a prior: $p(\weight)$
+* Given <span class="arithmatex">\(n\)</span> data, <span class="arithmatex">\(\dataset\)</span>, write down the likelihood expression <span class="arithmatex">\(P(B|, \weight)\)</span>.
+* Specify a prior: <span class="arithmatex">\(p(\weight)\)</span>
 * Compute the posterior
 $$ p(\weight|B) = \frac{p(B|\weight)p(\weight)}{p(B)}.$$</p>
 <h2 id="linear-prediction">Linear Prediction</h2>
-<p>Lets look at an example of the classic linear regression problem. A training dataset $\dataset$ with $N$ examples ${\xvec_{1:N}, y_{1:N}}$ is given. Each input $\xvec_i \in \realnum^M$ is a vector with $M$ attributes and each output $y_i \in \realnum$ is considered univariate. In linear prediction, the relation between input and output in the training dataset is approximated by a parameterized linear model $y(\xvec, \paramvec)$ where parameter vector $\paramvec = {\theta_1, \theta_2,\ldots,\theta_M}$. The linear model is expressed as:
+<p>Lets look at an example of the classic linear regression problem. A training dataset <span class="arithmatex">\(\dataset\)</span> with <span class="arithmatex">\(N\)</span> examples <span class="arithmatex">\(\{\xvec_{1:N}, y_{1:N}\}\)</span> is given. Each input <span class="arithmatex">\(\xvec_i \in \realnum^M\)</span> is a vector with <span class="arithmatex">\(M\)</span> attributes and each output <span class="arithmatex">\(y_i \in \realnum\)</span> is considered univariate. In linear prediction, the relation between input and output in the training dataset is approximated by a parameterized linear model <span class="arithmatex">\(y(\xvec, \paramvec)\)</span> where parameter vector <span class="arithmatex">\(\paramvec = \{\theta_1, \theta_2,\ldots,\theta_M\}\)</span>. The linear model is expressed as:
 $$
 y_i = \sum_{j=1}^M x_{ij}\theta_j, 
 $$
@@ -422,18 +422,18 @@ or a more compact matrix form is
 $$
 \yvec = \xmat\paramvec,
 $$
-where $\yvec$ is an $N\times1$ vector whose entries are $N$ outputs of training data and $\xmat$ is an $N\times M$ matrix whose rows are the input vectors of the training dataset. The problem is to estimate the parameters $\paramvec$ such that our linear model gives the 'best' fit to the provided training dataset $\dataset$. The estimated parameter $\hat{\theta}$ can be used to predict the ouput for input values not in the training dataset.</p>
+where <span class="arithmatex">\(\yvec\)</span> is an <span class="arithmatex">\(N\times1\)</span> vector whose entries are <span class="arithmatex">\(N\)</span> outputs of training data and <span class="arithmatex">\(\xmat\)</span> is an <span class="arithmatex">\(N\times M\)</span> matrix whose rows are the input vectors of the training dataset. The problem is to estimate the parameters <span class="arithmatex">\(\paramvec\)</span> such that our linear model gives the 'best' fit to the provided training dataset <span class="arithmatex">\(\dataset\)</span>. The estimated parameter <span class="arithmatex">\(\hat{\theta}\)</span> can be used to predict the ouput for input values not in the training dataset.</p>
 <h3 id="least-squares">Least squares</h3>
 <p>The least squares (LS) estimate of the parameter.
 $$
 \hat{\paramvec} = (\xmat^T\xmat)^{-1}\xmat^T\yvec
 $$</p>
 <h3 id="maximum-likelihood">Maximum likelihood</h3>
-<p>The maximum likelihood (ML) estimate of the parameters $\paramvec$ is same as the LS estimate. Hence the LS parameter estimate is optimal in ML sense.</p>
+<p>The maximum likelihood (ML) estimate of the parameters <span class="arithmatex">\(\paramvec\)</span> is same as the LS estimate. Hence the LS parameter estimate is optimal in ML sense.</p>
 <h3 id="bayesian-linear-regression">Bayesian linear regression</h3>
-<p><em>Posterior mean</em>: $\paramvec = (\lambda\eye_M + \xmat^T\xmat)^{\inv}\xmat^T\yvec$ <br />
-<em>Posterior variance</em>: $\cov_N = \sigma^2(\lambda\eye_M + \xvec^T\xvec)^{\inv}$
-where $\lambda$ is a constant (to be defined).</p>
+<p><em>Posterior mean</em>: <span class="arithmatex">\(\paramvec = (\lambda\eye_M + \xmat^T\xmat)^{\inv}\xmat^T\yvec\)</span> <br />
+<em>Posterior variance</em>: <span class="arithmatex">\(\cov_N = \sigma^2(\lambda\eye_M + \xvec^T\xvec)^{\inv}\)</span>
+where <span class="arithmatex">\(\lambda\)</span> is a constant (to be defined).</p>
 <h2 id="references">References</h2>
 <ol>
 <li>Bayesian Inference: An Introduction to Principles and Practice in Machine Learning, Michael E. Tipping, Microsoft Research, Cambridge, U.K. (http://www.miketipping.com/papers.htm)   </li>
@@ -494,6 +494,10 @@ where $\lambda$ is a constant (to be defined).</p>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

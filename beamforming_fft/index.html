@@ -472,41 +472,41 @@
 <p>This <a href="https://www.youtube.com/watch?v=DVi1TC24_BY">video</a> tutorial demonstrates how to setup Anaconda package for Python on a Windows machine. Similar approach is applicable for Linux and OSX platforms.</p>
 <p><a href="https://www.youtube.com/embed/DVi1TC24_BY" title="Anaconda Python Setup"><img alt="Anaconda Python Setup" src="https://img.youtube.com/vi/DVi1TC24_BY/0.jpg" /></a></p>
 <h2 id="discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</h2>
-<p>Given a finite length discrete time sequence $x[m]$ for $0 \leq m \leq M - 1$, the discrete time fourier transform (DTFT) is defined as
-$$X(e^{j\omega}) = \sum\limits_{m=0}^{M-1} x[n] e^{-jm\omega}.$$
-$X(e^{j\omega})$ is a continuous function of the radial frequency $\omega$ and $-\pi \leq \omega \leq \pi$. </p>
-<p>The <strong>discrete</strong> fourier transform (DFT) can be viewed as the fequency domain sampling of the DTFT every $\Delta\omega = 2\pi/N$. Time domain sampling results in creating copies of the spectrum in the frequency domain. Similarly, sampling in the frequency domain has an effect of creatign copies of the time domain sequence at every $N$. Hence to avoid aliasing in time, we need to choose $N \geq M$ to avoid aliasing in time. The DFT is defined as</p>
-<p>$$ X[l] = X(e^{j\omega})\vert_{\omega = 2\pi l/N} $$</p>
-<p>$$X[l] = \sum\limits_{n=0}^{N-1} x[n] e^{-j(2\pi/N)ln} \quad l = 0,\ldots, N-1$$</p>
-<p>Above computation requries $\mathcal{O}(N^2)$.</p>
-<p>Fast Fourier Trasform is a divide-and-conquer based approach to evaluate the DFT with fewer number of operation, specifically $\mathcal{O}(N\log_2 N)$.</p>
+<p>Given a finite length discrete time sequence <span class="arithmatex">\(x[m]\)</span> for <span class="arithmatex">\(0 \leq m \leq M - 1\)</span>, the discrete time fourier transform (DTFT) is defined as
+<span class="arithmatex">\(<span class="arithmatex">\(X(e^{j\omega}) = \sum\limits_{m=0}^{M-1} x[n] e^{-jm\omega}.\)</span>\)</span>
+<span class="arithmatex">\(X(e^{j\omega})\)</span> is a continuous function of the radial frequency <span class="arithmatex">\(\omega\)</span> and <span class="arithmatex">\(-\pi \leq \omega \leq \pi\)</span>. </p>
+<p>The <strong>discrete</strong> fourier transform (DFT) can be viewed as the fequency domain sampling of the DTFT every <span class="arithmatex">\(\Delta\omega = 2\pi/N\)</span>. Time domain sampling results in creating copies of the spectrum in the frequency domain. Similarly, sampling in the frequency domain has an effect of creatign copies of the time domain sequence at every <span class="arithmatex">\(N\)</span>. Hence to avoid aliasing in time, we need to choose <span class="arithmatex">\(N \geq M\)</span> to avoid aliasing in time. The DFT is defined as</p>
+<div class="arithmatex">\[ X[l] = X(e^{j\omega})\vert_{\omega = 2\pi l/N} \]</div>
+<div class="arithmatex">\[X[l] = \sum\limits_{n=0}^{N-1} x[n] e^{-j(2\pi/N)ln} \quad l = 0,\ldots, N-1\]</div>
+<p>Above computation requries <span class="arithmatex">\(\mathcal{O}(N^2)\)</span>.</p>
+<p>Fast Fourier Trasform is a divide-and-conquer based approach to evaluate the DFT with fewer number of operation, specifically <span class="arithmatex">\(\mathcal{O}(N\log_2 N)\)</span>.</p>
 <h3 id="time-domain-filtering">Time domain filtering</h3>
-<p>DTFT of impuse response $h[n]$ of the system</p>
-<p>Frequency response: $H(e^{j\omega}) = \sum\limits_{m=0}^{M-1}h[m]e^{-j\omega m}$</p>
-<p>$X_N[l] = DFT(x[m])$</p>
+<p>DTFT of impuse response <span class="arithmatex">\(h[n]\)</span> of the system</p>
+<p>Frequency response: <span class="arithmatex">\(H(e^{j\omega}) = \sum\limits_{m=0}^{M-1}h[m]e^{-j\omega m}\)</span></p>
+<p><span class="arithmatex">\(X_N[l] = DFT(x[m])\)</span></p>
 <p><strong>Analogy</strong>:finite length signals = finite aperture </p>
 <h2 id="spatial-domain">Spatial domain</h2>
-<p>In spatial domain, signals are considered to be a finite set of narrowband signals observed using a uniform line array (ULA) with $N$ sensors. The measured signal is represented as a vector array data $\mathbf{x}$.</p>
-<p>A unit amplitude planewave signal arriving from direction $\theta$ is modeled using the array manifold vector/replica vector $\mathbf{v}(\theta)$. The replica vector is a vector of complex exponentials,
+<p>In spatial domain, signals are considered to be a finite set of narrowband signals observed using a uniform line array (ULA) with <span class="arithmatex">\(N\)</span> sensors. The measured signal is represented as a vector array data <span class="arithmatex">\(\mathbf{x}\)</span>.</p>
+<p>A unit amplitude planewave signal arriving from direction <span class="arithmatex">\(\theta\)</span> is modeled using the array manifold vector/replica vector <span class="arithmatex">\(\mathbf{v}(\theta)\)</span>. The replica vector is a vector of complex exponentials,
 $$
 \begin{align}
 [\mathbf{v}(\theta)]_n  =&amp; [e^{j(2\pi d/\lambda)n\cos(\theta)}] \
  =&amp; [e^{j(2\pi d/\lambda)nu}]
 \end{align}
 $$
-where $0 \leq \theta \leq \pi$ is the source bearing direction and the direction cosine is $u = \cos(\theta)$. The wavenumber is defined as $k = 2\pi/\lambda$.</p>
+where <span class="arithmatex">\(0 \leq \theta \leq \pi\)</span> is the source bearing direction and the direction cosine is <span class="arithmatex">\(u = \cos(\theta)\)</span>. The wavenumber is defined as <span class="arithmatex">\(k = 2\pi/\lambda\)</span>.</p>
 <p><strong>Beampattern</strong> defines the gain due to beamformer for each planewave from different direction
-$B(u) = \mathbf{w}^{H}\mathbf{v}(u), \quad \text{for} -1\leq u \leq 1$. Beampattern is analogous to the frequency response $H(e^{j\omega}$ of a DT filter described above.</p>
-<p>$$ B(u) = \sum w^* e^{-jkdun}$$</p>
-<p>$\omega = kdu$ and $\Delta\omega = kd\Delta u = 2\pi/N$</p>
+<span class="arithmatex">\(B(u) = \mathbf{w}^{H}\mathbf{v}(u), \quad \text{for} -1\leq u \leq 1\)</span>. Beampattern is analogous to the frequency response <span class="arithmatex">\(H(e^{j\omega}\)</span> of a DT filter described above.</p>
+<div class="arithmatex">\[ B(u) = \sum w^* e^{-jkdun}\]</div>
+<p><span class="arithmatex">\(\omega = kdu\)</span> and <span class="arithmatex">\(\Delta\omega = kd\Delta u = 2\pi/N\)</span></p>
 <p><strong>Scanned response</strong> defines the spatial spectrum of a propagating signal. The scanned response is analogous to the frequency spectrum of a DT signal.
-$$y = \mathbf{w}^{H}(u)\mathbf{x}$$</p>
-<p>$$\mathbf{w}(u) = \frac{1}{N}[e^{-jkdun}]$$
-$$y(u) = \frac{1}{N}\sum\limits x_n e^{jkdun}$$</p>
+<span class="arithmatex">\(<span class="arithmatex">\(y = \mathbf{w}^{H}(u)\mathbf{x}\)</span>\)</span></p>
+<div class="arithmatex">\[\mathbf{w}(u) = \frac{1}{N}[e^{-jkdun}]$$
+$$y(u) = \frac{1}{N}\sum\limits x_n e^{jkdun}\]</div>
 <p>fft(conj(w), N)</p>
-<p>If $d = \lambda/2$ so that $kd = \pi$ then $\Delta \omega = \pi \Delta u$</p>
+<p>If <span class="arithmatex">\(d = \lambda/2\)</span> so that <span class="arithmatex">\(kd = \pi\)</span> then <span class="arithmatex">\(\Delta \omega = \pi \Delta u\)</span></p>
 <p><strong>Side note</strong>
-* Need to be careful when $d \neq \lambda/2$, the FFT output will have invisible areas too.
+* Need to be careful when <span class="arithmatex">\(d \neq \lambda/2\)</span>, the FFT output will have invisible areas too.
 * scanned response can be implemented as IFFT
 * Test with non-symmetric scenario
 * FFT is memory efficient, 'in place' 
@@ -523,7 +523,7 @@ rc('text', usetex = True)
 rc('font', family = 'serif')
 </code></pre>
 <p>** Function defines the steering/replica vector**</p>
-<p>$[\mathbf{v}] = [e^{-j2\pi d/\lambda n \cos(\theta)}]$</p>
+<p><span class="arithmatex">\([\mathbf{v}] = [e^{-j2\pi d/\lambda n \cos(\theta)}]\)</span></p>
 <pre><code class="language-python">def steering_vector(N, u, beta):
     # beta: sampling ratio, 1 =&gt; Nyquist sampling
     n = np.arange(0, N)
@@ -637,6 +637,10 @@ plt.ylabel(r'Scan response dB')
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
