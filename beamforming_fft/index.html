@@ -7,10 +7,14 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+        <meta name="author" content="Saurav Tuladhar">
       
       
-        <link rel="prev" href="../beamforming_fft/">
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../about/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>About - Saurav writes</title>
+        <title>Beamforming and FFT - Saurav writes</title>
       
     
     
@@ -60,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about-saurav" class="md-skip">
+        <a href="#discrete-fourier-transform-dft" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              Beamforming and FFT
             
           </span>
         </div>
@@ -211,18 +215,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -238,7 +244,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Signal Processing
@@ -249,10 +255,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../beamforming_fft/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Beamforming with FFT
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -263,6 +289,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discrete-fourier-transform-dft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discrete Fourier Transform (DFT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discrete Fourier Transform (DFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-domain-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time domain filtering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial domain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scan-response-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scan response example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -279,19 +365,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -302,7 +379,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -324,8 +400,56 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discrete-fourier-transform-dft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discrete Fourier Transform (DFT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discrete Fourier Transform (DFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-domain-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time domain filtering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial domain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scan-response-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scan response example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -341,14 +465,132 @@
 
 
 
-<h1 id="about-saurav">About Saurav</h1>
-<p>Saurav Tuladhar</p>
+  <h1>Beamforming with FFT</h1>
+
+<p>This notebook explains the relation between spatial beamforming and the time domain FFT operation and show how beamforming can be implemented using FFT. The content presented below is loosely based on a tutorial by <a href="https://twitter.com/ProfJohnRBuck">Prof. John R. Buck</a> at <a href="https://www.umassd.edu">UMassD</a>.</p>
+<p>This document is presented as an <a href="https://ipython.org/notebook.html">IPython notebook</a>. </p>
+<p>This <a href="https://www.youtube.com/watch?v=DVi1TC24_BY">video</a> tutorial demonstrates how to setup Anaconda package for Python on a Windows machine. Similar approach is applicable for Linux and OSX platforms.</p>
+<p><a href="https://www.youtube.com/embed/DVi1TC24_BY" title="Anaconda Python Setup"><img alt="Anaconda Python Setup" src="https://img.youtube.com/vi/DVi1TC24_BY/0.jpg" /></a></p>
+<h2 id="discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</h2>
+<p>Given a finite length discrete time sequence $x[m]$ for $0 \leq m \leq M - 1$, the discrete time fourier transform (DTFT) is defined as
+$$X(e^{j\omega}) = \sum\limits_{m=0}^{M-1} x[n] e^{-jm\omega}.$$
+$X(e^{j\omega})$ is a continuous function of the radial frequency $\omega$ and $-\pi \leq \omega \leq \pi$. </p>
+<p>The <strong>discrete</strong> fourier transform (DFT) can be viewed as the fequency domain sampling of the DTFT every $\Delta\omega = 2\pi/N$. Time domain sampling results in creating copies of the spectrum in the frequency domain. Similarly, sampling in the frequency domain has an effect of creatign copies of the time domain sequence at every $N$. Hence to avoid aliasing in time, we need to choose $N \geq M$ to avoid aliasing in time. The DFT is defined as</p>
+<p>$$ X[l] = X(e^{j\omega})\vert_{\omega = 2\pi l/N} $$</p>
+<p>$$X[l] = \sum\limits_{n=0}^{N-1} x[n] e^{-j(2\pi/N)ln} \quad l = 0,\ldots, N-1$$</p>
+<p>Above computation requries $\mathcal{O}(N^2)$.</p>
+<p>Fast Fourier Trasform is a divide-and-conquer based approach to evaluate the DFT with fewer number of operation, specifically $\mathcal{O}(N\log_2 N)$.</p>
+<h3 id="time-domain-filtering">Time domain filtering</h3>
+<p>DTFT of impuse response $h[n]$ of the system</p>
+<p>Frequency response: $H(e^{j\omega}) = \sum\limits_{m=0}^{M-1}h[m]e^{-j\omega m}$</p>
+<p>$X_N[l] = DFT(x[m])$</p>
+<p><strong>Analogy</strong>:finite length signals = finite aperture </p>
+<h2 id="spatial-domain">Spatial domain</h2>
+<p>In spatial domain, signals are considered to be a finite set of narrowband signals observed using a uniform line array (ULA) with $N$ sensors. The measured signal is represented as a vector array data $\mathbf{x}$.</p>
+<p>A unit amplitude planewave signal arriving from direction $\theta$ is modeled using the array manifold vector/replica vector $\mathbf{v}(\theta)$. The replica vector is a vector of complex exponentials,
+$$
+\begin{align}
+[\mathbf{v}(\theta)]_n  =&amp; [e^{j(2\pi d/\lambda)n\cos(\theta)}] \
+ =&amp; [e^{j(2\pi d/\lambda)nu}]
+\end{align}
+$$
+where $0 \leq \theta \leq \pi$ is the source bearing direction and the direction cosine is $u = \cos(\theta)$. The wavenumber is defined as $k = 2\pi/\lambda$.</p>
+<p><strong>Beampattern</strong> defines the gain due to beamformer for each planewave from different direction
+$B(u) = \mathbf{w}^{H}\mathbf{v}(u), \quad \text{for} -1\leq u \leq 1$. Beampattern is analogous to the frequency response $H(e^{j\omega}$ of a DT filter described above.</p>
+<p>$$ B(u) = \sum w^* e^{-jkdun}$$</p>
+<p>$\omega = kdu$ and $\Delta\omega = kd\Delta u = 2\pi/N$</p>
+<p><strong>Scanned response</strong> defines the spatial spectrum of a propagating signal. The scanned response is analogous to the frequency spectrum of a DT signal.
+$$y = \mathbf{w}^{H}(u)\mathbf{x}$$</p>
+<p>$$\mathbf{w}(u) = \frac{1}{N}[e^{-jkdun}]$$
+$$y(u) = \frac{1}{N}\sum\limits x_n e^{jkdun}$$</p>
+<p>fft(conj(w), N)</p>
+<p>If $d = \lambda/2$ so that $kd = \pi$ then $\Delta \omega = \pi \Delta u$</p>
+<p><strong>Side note</strong>
+* Need to be careful when $d \neq \lambda/2$, the FFT output will have invisible areas too.
+* scanned response can be implemented as IFFT
+* Test with non-symmetric scenario
+* FFT is memory efficient, 'in place' 
+* Creating exponential vectors will be memory intensive</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+import scipy.signal as signal
+from scipy.fftpack import fft, fftshift, ifft
+from numpy.random import randn
+% matplotlib inline
+</code></pre>
+<pre><code class="language-python">from matplotlib import rc
+rc('text', usetex = True)
+rc('font', family = 'serif')
+</code></pre>
+<p>** Function defines the steering/replica vector**</p>
+<p>$[\mathbf{v}] = [e^{-j2\pi d/\lambda n \cos(\theta)}]$</p>
+<pre><code class="language-python">def steering_vector(N, u, beta):
+    # beta: sampling ratio, 1 =&gt; Nyquist sampling
+    n = np.arange(0, N)
+    sv = np.exp(-1j*np.pi*beta*u*n)
+    return sv    
+</code></pre>
+<pre><code class="language-python">N = 11
+sv = steering_vector(N, np.array(0), 1)
+Nfft = 1024
+</code></pre>
+<p><strong>Direct implementation</strong></p>
+<pre><code class="language-python">uscan = np.linspace(-1, 1, Nfft)
+V = np.empty((11, Nfft), dtype=complex)
+idx = 0
+for u in uscan:
+    V[:, idx] = steering_vector(11, u, 1)
+    idx = idx + 1
+
+BP = np.dot(sv/N, V)
+</code></pre>
+<p><strong>FFT based implementation</strong></p>
+<pre><code class="language-python">u = np.linspace(-(Nfft-1)/2, Nfft/2, Nfft)*2/Nfft
+BP_fft = (1/N)*fftshift(fft(sv, Nfft))
+</code></pre>
+<pre><code class="language-python">f, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
+ax1.plot(u, 20*np.log10(np.abs(BP_fft)), lw=2)
+ax1.set_title('FFT Beampattern')
+ax2.plot(uscan, 20*np.log10(np.abs(BP)), lw=2)
+ax2.set_title(r'u-scan Beampattern')     
+ax1.set_xlabel(r'u = \cos(\theta)')
+ax1.grid(True)
+ax2.grid(True)
+#ax1.set_xl
+</code></pre>
+<p><img alt="png" src="images/output_15_0.png" /></p>
+<h2 id="scan-response-example">Scan response example</h2>
+<pre><code class="language-python">u1 = 3/11
+u2 = -5/11
+sv1 = steering_vector(N, u1, 1)
+sv2 = steering_vector(N, u2, 1)
+x = sv1 + 0.5*sv2
+X = (Nfft/N)*fftshift(ifft(x, Nfft))
+
+plt.figure()
+plt.plot(u, 20*np.log10(np.abs(X)), lw=2)
+plt.ylim((-80, 0))
+plt.axvline(x=u1, color='k', linestyle='--', alpha=0.5)
+plt.axvline(x=u2, color='k', linestyle='--', alpha=0.5)
+plt.grid(True)
+plt.xlabel(r'u = \cos( \theta )')
+plt.ylabel(r'Scan response dB')
+#plt.annotate('u_1', xy=(u1, 0.1), xytext=(u1, 0.2))
+#plt.annotate('u_2', xy=(u2, 0.1), xytext=(u2, 0.2))
+#plt.savefig(filename='two_source_response.pdf', dpi=120)
+</code></pre>
+<pre><code>&lt;matplotlib.text.Text at 0x10a9566a0&gt;
+</code></pre>
+<p><img alt="png" src="images/output_17_1.png" /></p>
 
 
 
 
 
 
+
+  
+  
 
 
 

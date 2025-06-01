@@ -1,0 +1,23 @@
+UASP 2011
+#########
+:date: 2011-10-14 22:15
+:author: sauravtuladhar
+:category: Research
+:slug: uasp-2011
+:status: published
+
+I am just back from the `Underwater Acoustic Signal Processing Workshop 2011 <http://uasp.org/2011/UASP2011.shtml>`__ held at W. Alton Jones Campus, University of Rhode Island. It was a three day conference from 12th - 14th October, 2011.
+
+The chairman of the conference was my advisor Dr. John R. Buck. My lab partner David Hague gave a talk on his Compressed Sensing based active SONAR model inspired by bat's biosonar capability.
+
+Here are my reflections on the conference:
+
+-  The conference began with a reception banquet dinner where G. Clifford Carter was awarded the UASP Award. Apparently it turns out that G. C. Carter invented the Generalized Cross Correlation (GCC) method for time delay estimation. The acronym for this method matches the initials of Carter's name.
+-  Although the conference was on underwater signal processing, there were three plenary sessions on underwater autonomy which mainly dealt with robotics and control systems oriented design problems for underwater deployment of autonomous vehicles. I was a bit disappointed to see very less of signal processing. However where were one session each on Array processing , Noise Modeling and Acoustics Communications which were in the ball park of my interest.
+-  The navy seems to have a huge interest in developing unmanned underwater autonomous vehicles and there a lots of companies and academic laboratories working on this area.  I am not particularly interested on the navy's perspective on this, but as far as I understand the systems development has largely shifted towards being software based design.
+-  Large fraction of presentations were focused on military (navy) applications or the signal processing problems they were trying to solve were from military applications point of view. The focus on military applications was a bit too much for my liking.
+-  Certainly there are some civilian applications of the results from these research.
+-  There were few presentations on  Synthetic Aperture SONAR (SAS) and I came to an understanding that synthetic aperture is analogous to taking multiple photographs and stitching them together to form a panorama.
+-  There was a presentation by Aurther Baggeror on why MFP failed. My perception was that no body was sure why this particular method failed, but they already knew it had died.
+-  Interesting discussion on Coherence, brought up by Henry Cox.
+-  It was satisfying to see a large fraction of presentations using real field data for validation of their results. In computer simulations everything works :D.

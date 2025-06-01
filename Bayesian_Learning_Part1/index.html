@@ -7,20 +7,22 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+        <meta name="author" content="Saurav Tuladhar">
       
       
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Saurav writes</title>
+        <title>Bayesian Learning: Part I - Saurav writes</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -39,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#linear-prediction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +76,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Saurav writes" class="md-header__button md-logo" aria-label="Saurav writes" data-md-component="logo">
+    <a href=".." title="Saurav writes" class="md-header__button md-logo" aria-label="Saurav writes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -89,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Bayesian Learning: Part I
             
           </span>
         </div>
@@ -167,7 +174,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Saurav writes" class="md-nav__button md-logo" aria-label="Saurav writes" data-md-component="logo">
+    <a href=".." title="Saurav writes" class="md-nav__button md-logo" aria-label="Saurav writes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -185,7 +192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -245,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/beamforming_fft/" class="md-nav__link">
+      <a href="../beamforming_fft/" class="md-nav__link">
         
   
   
@@ -275,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -308,6 +315,65 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linear-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Prediction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Prediction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#least-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Least squares
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-likelihood" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum likelihood
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bayesian-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bayesian linear regression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -318,8 +384,77 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+  <h1>Bayesian Learning: Part I</h1>
+
+<p>In this post I want to lay out some of the basic concepts of Bayesian inference as used in the machine learning context. The content on this post is heavily derived from [1, 2]. This post and my interes in Bayesian inference has been inspired by talks I attend with the <a href="https://www.meetup.com/Boston-Bayesians">Boston Bayesian Meetup</a> group.</p>
+<p>In supervised machine learning, we wish to learn relation between two variables $A$ and $B$ given some sample examples. Once the relation has been 'learned', the we can predict 'what is $B$' given $A$. In practice the measurement of both the dependent ($B$) and independent ($A$) variable is inexact and the relation between them is not deterministic. Given this inherent uncertainty it does not make sense to have a deterministic for $B$ with complete certainty. A probabilistic approach is better suited for meaningful reasoning in presence of uncertainty.</p>
+<p>The probabilistic approach treats both $A$ and $B$ as random variables and relates the two via the conditional probability $P(B|A)$ i.e., the probability of $B$ given a specific value of $A$. The first step in machine learning is to approximate the likelihood $P(B|A)$ with an appropriate model based on a given set of examples of $A$ and $B$. Typically, the conditional probability $P(B|A)$ has a parameterized model 
+$$
+\newcommand{\weight}{\mathbf{w}}
+\newcommand{\dataset}{\mathcal{D}}
+\newcommand{\paramvec}{\mathbf{\theta}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\xmat}{\mathbf{X}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\realnum}{\mathbb{R}}
+\newcommand{eye}{\mathbf{I}}
+\newcommand{\cov}{\mathbf{V}}
+\newcommand{\inv}{{-1}}
+P(B|A) = f(A;\weight),
+$$
+where $\weight$ is a vector of model parameters. Then given a set $\dataset$ of $N$ examples $\dataset = {A_n, B_n}<em>{n=1:N}$, a conventional approach involves optimization (e.g. maximum likelihood, least-squares fit) of our model for the given data $\dataset$ w.r.t. the parameters $\weight$. With the optimal parameters $\weight</em>{opt}$ computed, we can predict the unknown $B$ by evaluating $f(A_<em>; \weight_{opt})$ given $A_</em>$. </p>
+<p>The Bayesian inference approach treats the model parameters $\weight$ as random variables. The conditional probability of $B$ now depends on both $A$ and $\weight$: $P(B|A, \weight)$. Rather than 'learning' specific values for $\weight$, we can infer a <em>posterior</em> distribution $P(\weight|A, B)$ over the parameters $\weight$ using the Bayes' rule. </p>
+<p>In general, the Bayesian approach for learning model parameters involves following steps:
+* Given $n$ data, $\dataset$, write down the likelihood expression $P(B|, \weight)$.
+* Specify a prior: $p(\weight)$
+* Compute the posterior
+$$ p(\weight|B) = \frac{p(B|\weight)p(\weight)}{p(B)}.$$</p>
+<h2 id="linear-prediction">Linear Prediction</h2>
+<p>Lets look at an example of the classic linear regression problem. A training dataset $\dataset$ with $N$ examples ${\xvec_{1:N}, y_{1:N}}$ is given. Each input $\xvec_i \in \realnum^M$ is a vector with $M$ attributes and each output $y_i \in \realnum$ is considered univariate. In linear prediction, the relation between input and output in the training dataset is approximated by a parameterized linear model $y(\xvec, \paramvec)$ where parameter vector $\paramvec = {\theta_1, \theta_2,\ldots,\theta_M}$. The linear model is expressed as:
+$$
+y_i = \sum_{j=1}^M x_{ij}\theta_j, 
+$$
+or a more compact matrix form is
+$$
+\yvec = \xmat\paramvec,
+$$
+where $\yvec$ is an $N\times1$ vector whose entries are $N$ outputs of training data and $\xmat$ is an $N\times M$ matrix whose rows are the input vectors of the training dataset. The problem is to estimate the parameters $\paramvec$ such that our linear model gives the 'best' fit to the provided training dataset $\dataset$. The estimated parameter $\hat{\theta}$ can be used to predict the ouput for input values not in the training dataset.</p>
+<h3 id="least-squares">Least squares</h3>
+<p>The least squares (LS) estimate of the parameter.
+$$
+\hat{\paramvec} = (\xmat^T\xmat)^{-1}\xmat^T\yvec
+$$</p>
+<h3 id="maximum-likelihood">Maximum likelihood</h3>
+<p>The maximum likelihood (ML) estimate of the parameters $\paramvec$ is same as the LS estimate. Hence the LS parameter estimate is optimal in ML sense.</p>
+<h3 id="bayesian-linear-regression">Bayesian linear regression</h3>
+<p><em>Posterior mean</em>: $\paramvec = (\lambda\eye_M + \xmat^T\xmat)^{\inv}\xmat^T\yvec$ <br />
+<em>Posterior variance</em>: $\cov_N = \sigma^2(\lambda\eye_M + \xvec^T\xvec)^{\inv}$
+where $\lambda$ is a constant (to be defined).</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Bayesian Inference: An Introduction to Principles and Practice in Machine Learning, Michael E. Tipping, Microsoft Research, Cambridge, U.K. (http://www.miketipping.com/papers.htm)   </li>
+<li>Machine Learning (CPSC 540) lecture notes from Prof. Nando de Freitas, UBC (http://www.cs.ubc.ca/~nando/540-2013/index.html)</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -355,10 +490,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
