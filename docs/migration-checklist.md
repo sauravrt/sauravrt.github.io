@@ -6,10 +6,10 @@
 - Flickr: <https://www.flickr.com/photos/sauravrt/>.
 - Fourteen dated posts are included in production.
 - Two undated technical pages are preserved as drafts, not silently discarded.
-- The Technical library is implemented but empty: no original notebook export
-  has been supplied or recovered yet.
-- GitHub Pages workflow is prepared; no remote settings were changed and no
-  deployment was performed.
+- The Technical page lists document titles linking directly to their artifacts.
+  Its first publication is **TDOA HGDoP Exploration**, a marimo WASM notebook.
+- GitHub Pages is configured for Actions publishing and the initial site has
+  been deployed successfully.
 
 ## Content and redirect inventory
 
@@ -61,8 +61,10 @@ files. No external-image dependency remains in the public article bodies.
 - [ ] Review each migrated article against the legacy source before launch.
 - [ ] Approve biography and any desired copy changes.
 - [ ] Recover/approve dates and missing technical assets.
-- [ ] Enable GitHub Actions publishing in repository Settings → Pages.
-- [ ] Verify the first remote build and deployed URLs.
+- [x] Enable GitHub Actions publishing in repository Settings → Pages.
+- [x] Verify the first remote build and deployed URLs.
+- [x] Preview TDOA WASM locally in Chromium: plots render, a slider recomputes
+  the geometry, and no JavaScript errors are reported.
 
 ## Implementation decisions
 
@@ -75,3 +77,5 @@ files. No external-image dependency remains in the public article bodies.
   fallback. No custom redirect framework was introduced.
 - EARS checkboxes remain acceptance-review work items; they are not promises
   of one automated test per statement.
+- Notebook artifact links explicitly preserve the trailing slash required for
+  relative assets when served by Zola locally.

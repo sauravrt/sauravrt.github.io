@@ -94,8 +94,9 @@ source_url = "https://github.com/OWNER/REPO"
 Optional prerequisites, provenance, and limitations.
 ```
 
-Use `format = "jupyter"` for a Jupyter export. The library links to a descriptive
-page first; its “Open notebook” link opens the standalone export, not an iframe.
+Use `format = "jupyter"` for a Jupyter export. The Technical page is a title-only
+list whose links open standalone exports directly, not in iframes. Artifact
+directory links must preserve their trailing slash so relative assets resolve.
 Do not place unfinished exports in `static/`: static files are copied even when
 their catalog entry is a draft.
 
@@ -103,15 +104,20 @@ Typical export commands (run in the source environment, not this repository):
 
 ```sh
 marimo export html notebook.py -o index.html
+marimo export html-wasm notebook.py -o output_dir --mode run
 jupyter nbconvert --to html notebook.ipynb --output index.html
 ```
 
-Record the exporter version and source revision in the entry body. No exporter
-is pinned here yet because no notebook artifacts have been published; use the
-version pinned by each source project. Open the export from its final preview
-URL, check relative assets, and review it for credentials, private outputs,
-filesystem paths, and unintended personal data before copying it into `static/`.
-Disclose external runtime dependencies and unusually large downloads.
+`export html` creates a read-only snapshot; `export html-wasm` keeps controls
+interactive by executing Python in the browser. WASM exports require internet
+access to download the runtime and packages unless explicitly bundled offline.
+
+Record the exporter version and source revision in publication documentation.
+The TDOA publication uses marimo **0.25.2**; see
+[`notebooks/README.md`](notebooks/README.md) for its pinned browser dependencies
+and reproducible export command. Open exports from their final preview URLs,
+check relative assets, and review them for credentials, private outputs,
+filesystem paths, and unintended personal data before publication.
 
 ## Migration status
 

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% set posts = get_section(path='posts/_index.md') %}
-<h1>{{ section.title }}</h1>
+<h1 class="section-title">{{ section.title }}</h1>
 <div class="prose section-intro">{{ posts.content | safe }}</div>
 {% if posts.pages %}
   {{ <entries pages={posts.pages} /> }}

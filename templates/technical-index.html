@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="section-title">{{ section.title }}</h1>
+{% if section.pages %}
+<ul>
+  {% for item in section.pages %}
+  <li><a href="{{ get_url(path=item.extra.artifact_url, trailing_slash=true) }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty-state">Nothing published here yet.</p>
+{% endif %}
+{% endblock content %}

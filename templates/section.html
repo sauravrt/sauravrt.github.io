@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ section.title }}</h1>
+<h1 class="section-title">{{ section.title }}</h1>
 <div class="prose section-intro">{{ section.content | safe }}</div>
 {% if section.pages %}
   {{ <entries pages={section.pages} /> }}

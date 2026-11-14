@@ -52,17 +52,15 @@ and limitations. It must not duplicate the full notebook narrative.
 
 ## Catalog Behavior
 
-The Technical index lists entries by publication/update date and displays:
+The Technical index is a title-only list, sorted newest first. Each title links
+directly to its standalone artifact, without a descriptive intermediary. The
+first document is **TDOA HGDoP Exploration**. Add future documents through the
+same metadata model; no template changes are required.
 
-- Title.
-- Description.
-- Format label.
-- Publication or update date.
-- Link to the descriptive entry page.
-
-The entry page provides a prominent “Open notebook” link and optional “View
-source” and related-post links. Exports are never loaded in iframes on catalog
-or entry pages.
+Metadata entry pages remain addressable for compatibility, but are not the
+primary reader path. Exports are never loaded in iframes on catalog or entry
+pages. Exporter details and runtime requirements belong in publication
+documentation rather than a verbose catalog introduction.
 
 ## Export Contract
 
@@ -123,8 +121,23 @@ Before publication, inspect both source text and rendered output for:
 - Active third-party scripts.
 - Forms, network calls, or browser storage not required by the material.
 
-Notebook code is treated as public source once included in the export. Static
-hosting does not make active notebook execution available.
+Notebook code is treated as public source once included in the export. Ordinary
+HTML snapshots do not execute Python. For interactive marimo publications, use
+`html-wasm --mode run`: Python executes in the visitor's browser through Pyodide,
+not on GitHub Pages. Internet access is required for runtime/package downloads.
+
+### TDOA / GDOP publication
+
+- Catalog: `/technical/tdoa-gdop/`.
+- Artifact: `/labs/tdoa-gdop/`.
+- Publication source: `notebooks/tdoa-gdop.py`; the original in `sigproc-notes`
+  remains authoritative.
+- Exporter: marimo 0.25.2, directory export, run mode, code initially hidden.
+- Preserve native package pins and add separate `emscripten` dependency markers
+  matching Pyodide's NumPy, SciPy, and Matplotlib builds.
+- Keep numerical code and controls unchanged unless browser review demonstrates
+  a need for changes. The design map runs eagerly; Monte Carlo is button-gated.
+- Commit reviewed exports, rather than adding notebook execution to website CI.
 
 ## Error Handling and Edge Cases
 

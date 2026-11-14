@@ -13,7 +13,7 @@
 ## Catalog and Entry Pages
 
 - [ ] **TECH-CATALOG-010**: The Technical index shall list every non-draft Technical entry.
-- [ ] **TECH-CATALOG-011**: Each Technical-index item shall display the title, description, format, and publication or update date.
+- [ ] **TECH-CATALOG-011**: Each Technical-index item shall display only its document title, linked directly to the standalone artifact.
 - [ ] **TECH-CATALOG-012**: Each Technical entry shall publish at `/technical/<slug>/`.
 - [ ] **TECH-CATALOG-013**: Each Technical entry page shall display a prominent link to its `/labs/<slug>/` artifact.
 - [ ] **TECH-CATALOG-014**: The Technical index and entry pages shall not load notebook artifacts in iframes.

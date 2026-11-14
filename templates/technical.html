@@ -5,7 +5,7 @@
   <h1>{{ page.title }}</h1>
   <p class="metadata">{{ page.date | date(format="%B %e, %Y") }}{% if page.updated %} · Updated {{ page.updated | date(format="%B %e, %Y") }}{% endif %}</p>
   <p>{{ page.description }}</p>
-  <p><a class="artifact-link" href="{{ get_url(path=page.extra.artifact_url) }}">Open notebook →</a>{% if page.extra.size %} <span class="metadata">({{ page.extra.size }})</span>{% endif %}</p>
+  <p><a class="artifact-link" href="{{ get_url(path=page.extra.artifact_url, trailing_slash=true) }}">Open notebook →</a>{% if page.extra.size %} <span class="metadata">({{ page.extra.size }})</span>{% endif %}</p>
   <div class="prose">{{ page.content | safe }}</div>
   {% if page.extra.source_url %}<p><a href="{{ page.extra.source_url }}">View source</a></p>{% endif %}
   {% if page.extra.related_post %}<p><a href="{{ get_url(path=page.extra.related_post) }}">Related post</a></p>{% endif %}
