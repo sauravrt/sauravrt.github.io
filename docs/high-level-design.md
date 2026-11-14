@@ -36,7 +36,7 @@ GitHub Pages user site `sauravrt.github.io`.
 
 ## Goals
 
-1. **Minimal personal presence** - Provide a fast, readable About/home page
+1. **Minimal personal presence** - Provide a fast, readable About page
    that introduces Saurav and links to the site's main sections.
 2. **Maintainable writing** - List posts in reverse chronological order and
    give every post a stable, readable page.
@@ -84,7 +84,7 @@ The primary navigation will remain intentionally small:
 
 | Route | Purpose |
 |---|---|
-| `/` | Concise introduction, selected/recent work, and links onward |
+| `/` | Full reverse-chronological Posts list (default landing page) |
 | `/about/` | Longer biography, interests, and contact/profile links |
 | `/posts/` | Reverse-chronological writing index |
 | `/posts/<slug>/` | Individual article |
@@ -138,8 +138,7 @@ that standalone technical artifact rather than loaded site-wide.
 ### About
 
 A regular Zola page containing the biography and optional structured profile
-links. The home page will reuse a shorter introduction rather than duplicating
-the full biography.
+links. The home page lists posts rather than duplicating the biography.
 
 ### Posts
 

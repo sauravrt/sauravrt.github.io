@@ -70,7 +70,7 @@ the shared profile-links partial. The supplied URL is
 
 | Page | Template | Main content |
 |---|---|---|
-| Home | `index.html` | Short introduction, recent/selected posts, Technical link |
+| Home | `index.html` | Full reverse-chronological Posts list |
 | About | `page.html` | Biography and profile links |
 | Section index | Feature-specific section template | Chronological content list |
 | Article | Feature-specific page template | Title, metadata, body |
@@ -87,7 +87,8 @@ Primary navigation contains:
 2. Posts
 3. Technical
 
-The site title links to `/`. Flickr is an external profile link, not a primary
+The site title and Posts navigation link lead to `/`, which lists all published
+posts; `/posts/` remains available as a compatible index route. Flickr is an external profile link, not a primary
 content section. It will appear with other profile links on About and in the
 footer. External links must have visible names; icon-only links are not used.
 

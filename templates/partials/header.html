@@ -4,7 +4,7 @@
   <nav aria-label="Main navigation">
     {% set current = current_path | default(value='/') %}
     <a href="{{ get_url(path='about/') }}"{% if current == '/about/' %} aria-current="page"{% endif %}>About</a>
-    <a href="{{ get_url(path='posts/') }}"{% if current is starting_with(pat='/posts/') %} aria-current="page"{% endif %}>Posts</a>
+    <a href="{{ get_url(path='/') }}"{% if current == '/' or current is starting_with(pat='/posts/') %} aria-current="page"{% endif %}>Posts</a>
     <a href="{{ get_url(path='technical/') }}"{% if current is starting_with(pat='/technical/') %} aria-current="page"{% endif %}>Technical</a>
   </nav>
 </header>

@@ -37,7 +37,7 @@ keyboard navigation, and verify images, equations, links, and downloads.
 ## Edit your profile
 
 - `content/about.md`: biography.
-- `content/_index.md`: short home-page introduction.
+- `content/_index.md`: home-page title and metadata; the homepage lists all posts.
 - `config.toml`: title, description, author, GitHub, and Flickr URLs.
 
 Flickr is a simple external profile link. No gallery, embed, or API is used.
