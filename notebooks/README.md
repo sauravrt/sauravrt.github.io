@@ -9,7 +9,8 @@ Only published notebook exports are served from `static/labs/`.
 - Original SHA-256 when copied:
   `d04518152efbdc4b0ceeb5e09954b24dfa062f95a61ccf84e70c134555381012`.
 - Changes from the original: pin marimo 0.25.2 and add platform-specific package
-  dependencies for Pyodide. Numerical code and controls are unchanged.
+  dependencies for Pyodide, plus a hidden-code navigation cell linking back to
+  Technical and Home. Numerical code and controls are unchanged.
 - Native versions: NumPy 2.5.4, SciPy 1.18.1, Matplotlib 3.11.2.
 - Browser versions: NumPy 2.4.3, SciPy 1.17.1, Matplotlib 3.10.8.
 
@@ -43,7 +44,8 @@ Do not edit generated HTML/JavaScript to change the notebook.
 - Original SHA-256 when copied:
   `a32b17dc7ff52807242c792276fd4f11c6478f00ec7e6e93ed7c39f653f52ccc`.
 - Changes from the original: pin marimo 0.25.2 and add platform-specific
-  dependencies for Pyodide. Numerical code, figures, and controls are unchanged.
+  dependencies for Pyodide, plus a hidden-code navigation cell linking back to
+  Technical and Home. Numerical code, figures, and controls are unchanged.
 - Native requirements: NumPy >=2.4.6 and Matplotlib >=3.11.1.
 - Browser versions: NumPy 2.4.3 and Matplotlib 3.10.8.
 - Catalog title: **Beamforming with FFT**.

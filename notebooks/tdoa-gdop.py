@@ -11,7 +11,7 @@
 # ]
 # ///
 # Publication copy of sigproc-notes/notebooks/tdoa-gdop.py.
-# The original notebook remains authoritative; only dependency metadata differs.
+# The original remains authoritative; publication dependencies and navigation differ.
 import marimo
 
 __generated_with = "0.24.0"
@@ -27,6 +27,12 @@ def imports():
     from scipy.optimize import least_squares
     plt.rcParams.update({'font.family':'serif', 'figure.facecolor':'#fffff8', 'axes.facecolor':'#fffff8', 'axes.spines.top':False, 'axes.spines.right':False, 'axes.grid':False, 'figure.dpi':120})
     return Ellipse, least_squares, mo, np, plt
+
+
+@app.cell(hide_code=True)
+def site_navigation(mo):
+    mo.md("[← Technical](../../technical/) · [Home](../../)")
+    return
 
 
 @app.cell(hide_code=True)

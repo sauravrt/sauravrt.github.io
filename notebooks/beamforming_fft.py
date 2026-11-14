@@ -10,7 +10,7 @@
 # ///
 
 # Publication copy of sigproc-notes/notebooks/beamforming_fft.py.
-# The original notebook remains authoritative; only dependency metadata differs.
+# The original remains authoritative; publication dependencies and navigation differ.
 import marimo
 
 __generated_with = "0.25.2"
@@ -24,6 +24,12 @@ def imports():
     import matplotlib.pyplot as plt
 
     return mo, np, plt
+
+
+@app.cell(hide_code=True)
+def site_navigation(mo):
+    mo.md("[← Technical](../../technical/) · [Home](../../)")
+    return
 
 
 @app.cell(hide_code=True)

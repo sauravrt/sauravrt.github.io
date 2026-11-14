@@ -62,6 +62,11 @@ primary reader path. Exports are never loaded in iframes on catalog or entry
 pages. Exporter details and runtime requirements belong in publication
 documentation rather than a verbose catalog introduction.
 
+Each published marimo notebook includes a small top navigation cell with
+`← Technical` and `Home` links. Use `../../technical/` and `../../` from the
+artifact directory so navigation works in local preview and on GitHub Pages.
+Add the cell to the publication source, not generated HTML or research originals.
+
 ## Export Contract
 
 An export is publishable when:
