@@ -7,7 +7,8 @@
 - Fourteen dated posts are included in production.
 - Two undated technical pages are preserved as drafts, not silently discarded.
 - The Technical page lists document titles linking directly to their artifacts.
-  Its first publication is **TDOA HGDoP Exploration**, a marimo WASM notebook.
+  Publications include **TDOA HGDoP Exploration** and **Beamforming with FFT**,
+  both marimo WASM notebooks.
 - GitHub Pages is configured for Actions publishing and the initial site has
   been deployed successfully.
 
@@ -65,6 +66,9 @@ files. No external-image dependency remains in the public article bodies.
 - [x] Verify the first remote build and deployed URLs.
 - [x] Preview TDOA WASM locally in Chromium: plots render, a slider recomputes
   the geometry, and no JavaScript errors are reported.
+- [x] Preview Beamforming WASM locally in Chromium: two plots render, changing
+  sensor count recomputes the beam pattern, and Polar view switches correctly
+  without JavaScript or HTTP errors. The old undated article remains a draft.
 
 ## Implementation decisions
 

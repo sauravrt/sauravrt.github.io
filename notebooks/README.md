@@ -36,3 +36,26 @@ notebook code remains inspectable in run mode.
 Preview with `zola serve`, then open `/technical/` and select **TDOA HGDoP
 Exploration**. Check controls, plots, and the optional Monte Carlo run over HTTP.
 Do not edit generated HTML/JavaScript to change the notebook.
+
+## Beamforming with FFT
+
+- Original: `sigproc-notes/notebooks/beamforming_fft.py`.
+- Original SHA-256 when copied:
+  `a32b17dc7ff52807242c792276fd4f11c6478f00ec7e6e93ed7c39f653f52ccc`.
+- Changes from the original: pin marimo 0.25.2 and add platform-specific
+  dependencies for Pyodide. Numerical code, figures, and controls are unchanged.
+- Native requirements: NumPy >=2.4.6 and Matplotlib >=3.11.1.
+- Browser versions: NumPy 2.4.3 and Matplotlib 3.10.8.
+- Catalog title: **Beamforming with FFT**.
+- Artifact: `/labs/beamforming-fft/`.
+
+```sh
+uvx --from marimo==0.25.2 marimo check notebooks/beamforming_fft.py --select MW
+uvx --from marimo==0.25.2 marimo export html-wasm notebooks/beamforming_fft.py \
+  --no-sandbox --mode run --no-show-code --output static/labs/beamforming-fft
+```
+
+The same internet and runtime requirements described above apply. Preview from
+the Technical list, then check the beam/scan plots, sensor and direction
+controls, and Cartesian/Polar switching. This is a new notebook publication;
+the undated legacy beamforming article remains a draft.

@@ -139,6 +139,18 @@ not on GitHub Pages. Internet access is required for runtime/package downloads.
   a need for changes. The design map runs eagerly; Monte Carlo is button-gated.
 - Commit reviewed exports, rather than adding notebook execution to website CI.
 
+### Beamforming with FFT publication
+
+- Catalog: `/technical/beamforming-fft/`.
+- Artifact: `/labs/beamforming-fft/`.
+- Publication source: `notebooks/beamforming_fft.py`, copied from `sigproc-notes`.
+- Use the same marimo 0.25.2 directory-export workflow, with browser-compatible
+  NumPy 2.4.3 and Matplotlib 3.10.8 dependency markers.
+- Preserve the original numerical code and controls. Preview both Cartesian
+  and polar plots and reactive sensor/direction changes before publication.
+- Publish as a new Technical document; retain the old undated article as a
+  draft rather than substituting it silently.
+
 ## Error Handling and Edge Cases
 
 | Condition | Handling |
