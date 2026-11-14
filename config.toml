@@ -1,0 +1,28 @@
+base_url = "https://sauravrt.github.io"
+title = "Saurav writes"
+description = "Notes on signal processing, mathematics, Python, and life by Saurav Tuladhar."
+default_language = "en"
+author = "Saurav Tuladhar"
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+build_search_index = false
+taxonomies = [{ name = "tags", feed = false }]
+
+[markdown]
+render_emoji = false
+smart_punctuation = true
+lazy_async_image = true
+
+[markdown.highlighting]
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[link_checker]
+# Archived articles link to sites that may no longer exist. Check internal links
+# in CI; audit historical external links manually with `zola check`.
+skip_anchor_prefixes = []
+external_level = "warn"
+
+[extra.profiles]
+github = "https://github.com/sauravrt"
+flickr = "https://www.flickr.com/photos/sauravrt/"

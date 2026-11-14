@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ lang | default(value='en') }}">
+<head>
+  {% include "partials/head.html" %}
+</head>
+<body>
+  {# @spec SITE-A11Y-001, SITE-RENDER-001 #}
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/header.html" %}
+  <main id="main" tabindex="-1">
+    {% block content %}{% endblock content %}
+  </main>
+  {% include "partials/footer.html" %}
+  {% if page is defined and page.extra.math | default(value=false) %}
+  {# MathJax is loaded only on pages with equations. #}
+  <script src="{{ get_url(path='scripts/math.js') }}"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+  {% endif %}
+</body>
+</html>

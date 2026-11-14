@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+  <header class="article-header">
+    <p class="eyebrow">Writing</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.date %}
+    <p class="metadata">
+      <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+      {% if page.updated %} · Updated <time datetime="{{ page.updated | date(format='%Y-%m-%d') }}">{{ page.updated | date(format="%B %e, %Y") }}</time>{% endif %}
+    </p>
+    {% endif %}
+    {% if page.draft %}<p class="notice">Draft — not included in the public site.</p>{% endif %}
+  </header>
+  <div class="prose">{{ page.content | safe }}</div>
+  {% if page.taxonomies.tags %}
+  <ul class="tag-list" aria-label="Tags">
+    {% for tag in page.taxonomies.tags %}
+    <li><a href="{{ get_taxonomy_url(kind='tags', term=tag) }}">{{ tag | replace(from='-', to=' ') }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if page.extra.related_technical %}<p><a href="{{ get_url(path=page.extra.related_technical) }}">Related notebook →</a></p>{% endif %}
+</article>
+<p class="back-link"><a href="{{ get_url(path='posts/') }}">← All posts</a></p>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ section.title }}</h1>
+<div class="prose section-intro">{{ section.content | safe }}</div>
+{% if section.pages %}
+  {{ <entries pages={section.pages} /> }}
+{% else %}
+  <p class="empty-state">Nothing published here yet. Check back for future explorations.</p>
+{% endif %}
+{% endblock content %}

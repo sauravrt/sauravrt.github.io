@@ -1,0 +1,18 @@
+{% component entries(pages) %}
+<ul class="entry-list">
+{% for item in pages %}
+  <li>
+    <h2><a href="{{ item.permalink }}">{{ item.title }}</a></h2>
+    <div class="metadata">
+      {% if item.date %}
+      <time datetime="{{ item.date | date(format='%Y-%m-%d') }}">{{ item.date | date(format="%B %e, %Y") }}</time>
+      {% else %}
+      <span>Undated draft</span>
+      {% endif %}
+      {% if item.extra.format is defined %}<span> · {{ item.extra.format | capitalize }}</span>{% endif %}
+    </div>
+    <p>{{ item.description }}</p>
+  </li>
+{% endfor %}
+</ul>
+{% endcomponent entries %}

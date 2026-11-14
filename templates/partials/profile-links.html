@@ -1,0 +1,8 @@
+{# @spec SITE-PROFILE-001, SITE-PROFILE-003, SITE-PROFILE-004 #}
+{% if config.extra.profiles %}
+<ul class="profile-links" aria-label="Elsewhere">
+  {% for name, url in config.extra.profiles %}
+    <li><a href="{{ url }}">{% if name == "github" %}GitHub{% elif name == "flickr" %}Flickr{% else %}{{ name | capitalize }}{% endif %}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}

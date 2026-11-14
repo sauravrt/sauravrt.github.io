@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="eyebrow">404</p>
+<h1>Page not found</h1>
+<p>That page may have moved, or the link may be out of date.</p>
+<p>Try <a href="{{ get_url(path='/') }}">Home</a>, <a href="{{ get_url(path='posts/') }}">Posts</a>, or the <a href="{{ get_url(path='technical/') }}">Technical library</a>.</p>
+{% endblock content %}

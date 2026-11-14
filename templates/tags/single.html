@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="eyebrow">Tagged</p>
+<h1>{{ term.name | replace(from='-', to=' ') | capitalize }}</h1>
+{{ <entries pages={term.pages} /> }}
+<p><a href="{{ get_url(path='tags/') }}">All tags →</a></p>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{# @spec SITE-NAV-001, SITE-NAV-002, SITE-NAV-003, SITE-NAV-005 #}
+<header class="site-header">
+  <a class="site-name" href="{{ get_url(path='/') }}">{{ config.author }}</a>
+  <nav aria-label="Main navigation">
+    {% set current = current_path | default(value='/') %}
+    <a href="{{ get_url(path='about/') }}"{% if current == '/about/' %} aria-current="page"{% endif %}>About</a>
+    <a href="{{ get_url(path='posts/') }}"{% if current is starting_with(pat='/posts/') %} aria-current="page"{% endif %}>Posts</a>
+    <a href="{{ get_url(path='technical/') }}"{% if current is starting_with(pat='/technical/') %} aria-current="page"{% endif %}>Technical</a>
+  </nav>
+</header>

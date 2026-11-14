@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Tags</h1>
+<ul class="entry-list">
+{% for term in terms %}
+  <li><a href="{{ term.permalink }}">{{ term.name | replace(from='-', to=' ') }}</a> <span class="metadata">({{ term.pages | length }})</span></li>
+{% endfor %}
+</ul>
+{% endblock content %}

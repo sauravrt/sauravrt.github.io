@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="intro">
+  <p class="eyebrow">A personal notebook</p>
+  <h1>{{ section.title }}</h1>
+  <div class="prose">{{ section.content | safe }}</div>
+  <p><a href="{{ get_url(path='about/') }}">More about me →</a></p>
+</section>
+{% set posts = get_section(path='posts/_index.md') %}
+<section aria-labelledby="recent-heading">
+  <div class="section-heading">
+    <h2 id="recent-heading">From the archive</h2>
+    <a href="{{ posts.permalink }}">All posts →</a>
+  </div>
+  {% if posts.pages %}
+    {{ <entries pages={posts.pages[:3]} /> }}
+  {% else %}
+    <p>No posts published yet.</p>
+  {% endif %}
+</section>
+<aside class="technical-note">
+  <h2>Technical explorations</h2>
+  <p>Notebook-based material has a home in the <a href="{{ get_url(path='technical/') }}">Technical library</a>.</p>
+</aside>
+{% endblock content %}
